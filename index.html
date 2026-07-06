@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Memo Paper</title>
+  <meta name="description" content="매일 한 장 쓰고 버리는 홈화면 메모 앱 Memo Paper">
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f6f6f2;
+      --ink: #141414;
+      --muted: #686868;
+      --line: rgba(20, 20, 20, 0.12);
+      --paper: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Apple SD Gothic Neo", sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+    }
+
+    main {
+      width: min(960px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 56px 0 64px;
+    }
+
+    header {
+      display: grid;
+      grid-template-columns: 1fr minmax(260px, 360px);
+      gap: 42px;
+      align-items: center;
+      min-height: 78vh;
+    }
+
+    h1 {
+      margin: 22px 0 14px;
+      font-size: clamp(44px, 8vw, 86px);
+      line-height: 0.94;
+      letter-spacing: 0;
+    }
+
+    p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.65;
+    }
+
+    .icon {
+      width: 86px;
+      height: 86px;
+      border-radius: 20px;
+      box-shadow: 0 14px 38px rgba(0, 0, 0, 0.14);
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 28px;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 18px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      text-decoration: none;
+      font-weight: 700;
+      background: var(--ink);
+      color: var(--paper);
+    }
+
+    .button.secondary {
+      background: transparent;
+      color: var(--ink);
+    }
+
+    .phone {
+      position: relative;
+      aspect-ratio: 9 / 16;
+      border-radius: 38px;
+      background: #090909;
+      padding: 24px 18px;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.22);
+    }
+
+    .paper {
+      height: 74%;
+      margin-top: 52px;
+      border-radius: 22px;
+      background: #fbfbf7;
+      padding: 26px 22px;
+      box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.08);
+    }
+
+    .title {
+      font-size: 25px;
+      font-weight: 700;
+      padding-bottom: 16px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.14);
+    }
+
+    .todo {
+      display: grid;
+      grid-template-columns: 22px 1fr;
+      gap: 12px;
+      align-items: center;
+      margin-top: 18px;
+      font-size: 17px;
+    }
+
+    .box {
+      width: 20px;
+      height: 20px;
+      border: 2px solid #161616;
+      border-radius: 5px;
+    }
+
+    .box.done {
+      background: #161616;
+      box-shadow: inset 0 0 0 4px #fbfbf7;
+    }
+
+    section {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 20px;
+    }
+
+    .feature {
+      border-top: 1px solid var(--line);
+      padding-top: 18px;
+    }
+
+    .feature h2 {
+      margin: 0 0 8px;
+      font-size: 17px;
+    }
+
+    .feature p {
+      font-size: 15px;
+      line-height: 1.55;
+    }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      margin-top: 54px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    footer a {
+      color: var(--muted);
+    }
+
+    @media (max-width: 760px) {
+      header,
+      section {
+        grid-template-columns: 1fr;
+      }
+
+      header {
+        min-height: auto;
+      }
+
+      .phone {
+        width: min(340px, 100%);
+        margin: 14px auto 0;
+      }
+
+      footer {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div>
+        <img class="icon" src="assets/memo-paper-icon.png" alt="Memo Paper 앱 아이콘">
+        <h1>Memo Paper</h1>
+        <p>매일 한 장 쓰고 버리는 홈화면 메모 앱. 오늘 필요한 체크리스트와 짧은 메모를 포스트잇처럼 가볍게 붙여두세요.</p>
+        <div class="actions">
+          <a class="button" href="#" aria-label="App Store 준비 중">App Store 준비 중</a>
+          <a class="button secondary" href="privacy-policy.html">개인정보처리 방침</a>
+        </div>
+      </div>
+
+      <div class="phone" aria-label="Memo Paper 화면 미리보기">
+        <div class="paper">
+          <div class="title">챙길 것</div>
+          <div class="todo"><span class="box"></span><span>우유</span></div>
+          <div class="todo"><span class="box done"></span><span>도시락통</span></div>
+          <div class="todo"><span class="box"></span><span>커피</span></div>
+        </div>
+      </div>
+    </header>
+
+    <section>
+      <div class="feature">
+        <h2>한 장 중심</h2>
+        <p>앱을 열면 설명 화면 없이 바로 오늘의 메모 한 장을 편집합니다.</p>
+      </div>
+      <div class="feature">
+        <h2>홈화면 위젯</h2>
+        <p>현재 메모를 홈화면과 잠금화면 위젯에 그대로 표시합니다.</p>
+      </div>
+      <div class="feature">
+        <h2>로컬 저장</h2>
+        <p>로그인 없이 기기 안에 저장하고 앱과 위젯이 같은 메모를 읽습니다.</p>
+      </div>
+    </section>
+
+    <footer>
+      <span>© 2026 Memo Paper</span>
+      <a href="privacy-policy.html">개인정보처리 방침</a>
+    </footer>
+  </main>
+</body>
+</html>
