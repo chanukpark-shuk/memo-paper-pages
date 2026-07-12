@@ -100,11 +100,11 @@
     .hero-shot {
       display: block;
       width: min(100%, 440px);
-      height: min(78vh, 800px);
+      height: auto;
+      max-height: 76vh;
       border-radius: 28px;
-      background: #ffffff;
-      object-fit: cover;
-      object-position: center;
+      background: var(--bg);
+      object-fit: contain;
       box-shadow: 0 30px 80px rgba(0, 0, 0, 0.18);
     }
 
@@ -181,7 +181,7 @@
       </div>
 
       <div class="hero-shot-wrap" aria-label="Memo Paper 실제 앱 화면">
-        <img class="hero-shot" src="assets/memo-paper-hero-zoom.png?v=20260712" alt="Memo Paper 앱 실제 화면">
+        <img class="hero-shot" src="assets/memo-paper-hero-blended.png?v=20260712b" alt="Memo Paper 앱스토어 첫 번째 홍보 이미지">
       </div>
     </header>
 
