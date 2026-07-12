@@ -27,15 +27,15 @@
     }
 
     main {
-      width: min(960px, calc(100% - 40px));
+      width: min(1060px, calc(100% - 40px));
       margin: 0 auto;
       padding: 56px 0 64px;
     }
 
     header {
       display: grid;
-      grid-template-columns: 1fr minmax(260px, 360px);
-      gap: 42px;
+      grid-template-columns: 1fr minmax(320px, 440px);
+      gap: 44px;
       align-items: center;
       min-height: 78vh;
     }
@@ -91,50 +91,21 @@
       color: var(--ink);
     }
 
-    .phone {
-      position: relative;
-      aspect-ratio: 9 / 16;
-      border-radius: 38px;
-      background: #090909;
-      padding: 24px 18px;
-      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.22);
-    }
-
-    .paper {
-      height: 74%;
-      margin-top: 52px;
-      border-radius: 22px;
-      background: #fbfbf7;
-      padding: 26px 22px;
-      box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.08);
-    }
-
-    .title {
-      font-size: 25px;
-      font-weight: 700;
-      padding-bottom: 16px;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.14);
-    }
-
-    .todo {
-      display: grid;
-      grid-template-columns: 22px 1fr;
-      gap: 12px;
+    .hero-shot-wrap {
+      display: flex;
       align-items: center;
-      margin-top: 18px;
-      font-size: 17px;
+      justify-content: center;
     }
 
-    .box {
-      width: 20px;
-      height: 20px;
-      border: 2px solid #161616;
-      border-radius: 5px;
-    }
-
-    .box.done {
-      background: #161616;
-      box-shadow: inset 0 0 0 4px #fbfbf7;
+    .hero-shot {
+      display: block;
+      width: min(100%, 440px);
+      height: min(78vh, 800px);
+      border-radius: 28px;
+      background: #ffffff;
+      object-fit: cover;
+      object-position: center;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.18);
     }
 
     section {
@@ -184,8 +155,9 @@
         min-height: auto;
       }
 
-      .phone {
-        width: min(340px, 100%);
+      .hero-shot {
+        width: min(360px, 100%);
+        height: auto;
         margin: 14px auto 0;
       }
 
@@ -203,18 +175,13 @@
         <h1>Memo Paper</h1>
         <p>매일 한 장 쓰고 버리는 홈화면 메모 앱. 오늘 필요한 체크리스트와 짧은 메모를 포스트잇처럼 가볍게 붙여두세요.</p>
         <div class="actions">
-          <a class="button" href="#" aria-label="App Store 준비 중">App Store 준비 중</a>
+          <a class="button" href="https://apps.apple.com/app/id6787817478" aria-label="App Store에서 Memo Paper 받기">App Store에서 받기</a>
           <a class="button secondary" href="privacy-policy.html">개인정보처리 방침</a>
         </div>
       </div>
 
-      <div class="phone" aria-label="Memo Paper 화면 미리보기">
-        <div class="paper">
-          <div class="title">챙길 것</div>
-          <div class="todo"><span class="box"></span><span>우유</span></div>
-          <div class="todo"><span class="box done"></span><span>도시락통</span></div>
-          <div class="todo"><span class="box"></span><span>커피</span></div>
-        </div>
+      <div class="hero-shot-wrap" aria-label="Memo Paper 실제 앱 화면">
+        <img class="hero-shot" src="assets/memo-paper-hero-zoom.png?v=20260712" alt="Memo Paper 앱 실제 화면">
       </div>
     </header>
 
